@@ -48,13 +48,25 @@ switchport mode trunk
 switchport trunk allowed vlan 2,3,4,5
 '''
 
-access_template = [
+variant_int = { 'access':[
     'switchport mode access', 'switchport access vlan {}',
     'switchport nonegotiate', 'spanning-tree portfast',
     'spanning-tree bpduguard enable'
-]
-
-trunk_template = [
+],
+'trunk': [
     'switchport trunk encapsulation dot1q', 'switchport mode trunk',
     'switchport trunk allowed vlan {}'
 ]
+}
+
+type_int=input("Input type of interface: ")
+
+name_int=input("Input name interface: ")
+
+spisok_vlan = input("Input vlan: ")
+
+template=variant_int.get(type_int)
+
+
+print('interface {}'.format(name_int))
+print('\n'.join(template).format(spisok_vlan))

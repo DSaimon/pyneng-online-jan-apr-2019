@@ -52,5 +52,4 @@ london_co = {
 }
 
 
-print(london_co.get('name_device'))
- 
+print(london_co.get(name_device))

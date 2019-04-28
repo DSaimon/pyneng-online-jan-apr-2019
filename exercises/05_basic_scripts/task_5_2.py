@@ -19,3 +19,37 @@ Mask:
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
+
+net=input('Input net:')
+
+
+l=net.split('/')
+
+ip=l[0]
+cidr=int(l[1])
+
+s_ip=ip.split('.')
+
+print(ip)
+print(cidr)
+print(s_ip)
+
+mask = [0, 0, 0, 0] 
+
+for i in range(cidr):
+	mask[int(i/8)] = mask[int(i/8)] + (1 << (7 - i % 8 ))
+
+
+print(mask)
+
+template1='''
+Network:
+{0:<8} {1:<8} {2:<8} {3:<8}
+{0:08b} {1:08b} {2:08b} {3:08b}
+
+Mask:
+{4:<8} {5:<8} {6:<8} {7:<8}
+{4:08b} {5:08b} {6:08b} {7:08b}
+'''
+
+print(template1.format(int(s_ip[0]), int(s_ip[1]), int(s_ip[2]), int(s_ip[3]), int(mask[0]), int(mask[1]), int(mask[2]), int(mask[3])))
