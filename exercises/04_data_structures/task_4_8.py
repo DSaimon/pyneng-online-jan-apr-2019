@@ -19,3 +19,13 @@
 '''
 
 ip = '192.168.3.1'
+
+l=ip.split('.')
+
+template='''
+IP address:
+{0:<8} {1:<8} {2:<8} {3:<8}
+{0:08b} {1:08b} {2:08b} {3:08b}
+'''
+
+print(template.format(int(l[0]), int(l[1]), int(l[2]), int(l[3])))

@@ -21,6 +21,10 @@ $ python task_5_2.py
 То есть эту задачу можно решить без использования условия if.
 '''
 
+from sys import argv
+
+name_device = input('Input name of router:')
+
 london_co = {
     'r1': {
         'location': '21 New Globe Walk',
@@ -46,3 +50,7 @@ london_co = {
         'routing': True
     }
 }
+
+
+print(london_co.get('name_device'))
+ 

@@ -13,3 +13,14 @@
 
 command1 = 'switchport trunk allowed vlan 1,2,3,5,8'
 command2 = 'switchport trunk allowed vlan 1,3,8,9'
+
+a1=command1.split()
+a2=command2.split()
+b1=a1[-1].split(',')
+b2=a2[-1].split(',')
+c1=set(b1)
+c2=set(b2)
+uniq = c1 & c2
+result= list(uniq)
+result.sort()
+print(result)

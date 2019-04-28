@@ -10,3 +10,9 @@
 '''
 
 mac = 'AAAA:BBBB:CCCC'
+
+
+t= mac.split(':')
+z= '{:b}{:b}{:b}'
+
+print(z.format(int(t[0],16),int(t[1],16),int(t[2],16)))
